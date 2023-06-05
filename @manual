@@ -1,0 +1,41 @@
+Given the guest user is on the BBC Sport artical with comments enabled and has clicked show comments
+When the user clicks on "Register"
+Then the user should be prompted to set a display name
+And the user should be prompted to verify their email address
+
+
+Given the user is viewing an article on the BBC Sport website
+When the user clicks on "Sign in" from the comments section
+Then the user should be redirected to the sign-in page
+And the user should be able to enter their credentials and sign in
+
+Given the user is viewing an article on the BBC Sport website
+When the user clicks on "Sign in" from the comments section
+And enters invalid login credentials
+Then the user should see an error message indicating invalid credentials
+And the user should not be able to sign in
+
+Given the user is viewing an article on the BBC Sport website
+When the user is signed in and enters a comment
+And the user submits the comment
+Then the comment should be successfully posted
+And the comment should be visible in the comments section with the correct user id
+
+Given the user is viewing an article on the BBC Sport website
+When there are no comments available for the article
+Then the user should see a message indicating that no comments are available
+
+Given the user is viewing an article on the BBC Sport website
+When the comments for the article are closed
+Then the user should see a message indicating that comments are closed for this article
+
+Given the user is viewing an article on the BBC Sport website
+When the user enters a comment containing invalid characters such as emojis or unsupported symbols
+Then the comment should not be accepted
+And the user should be notified about the invalid characters in the comment
+
+Given the user is viewing an article on the BBC Sport website
+When the user enters a comment that exceeds the character limit
+Then the comment should not be accepted
+And the user should be notified about the character limit exceeded
+
